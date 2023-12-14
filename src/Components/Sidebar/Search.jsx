@@ -17,7 +17,7 @@ import {
 import { SearchLogo } from "../../assets/constants";
 import useSearchUser from "../../hooks/useSearchUser";
 import { useRef } from "react";
-import SuggestedUser from "/Users/kavyarapolu/Desktop/insta-clone/insta/src/Components/SuggestedUsers/SuggestedUser";
+import SuggestedUser from "../../Components/SuggestedUsers/SuggestedUser";
 
 const Search = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
