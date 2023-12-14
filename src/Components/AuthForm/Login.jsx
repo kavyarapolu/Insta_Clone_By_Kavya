@@ -31,7 +31,7 @@ const Login = () => {
         <Input
           placeholder="Password"
           fontSize={14}
-          type="password"
+          type={showPassword ? "text" : "password"}
           size={"sm"}
           value={inputs.password}
           onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
