@@ -1,9 +1,9 @@
 import { useState } from "react";
 import useShowToast from "./useShowToast";
-import useAuthStore from "../store/authStore";
+import useAuthStore from "../Store/authStore";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { firestore } from "../firebase/firebase";
-import usePostStore from "../store/postStore";
+import usePostStore from "../Store/postStore";
 
 const usePostComment = () => {
   const [isCommenting, setIsCommenting] = useState(false);

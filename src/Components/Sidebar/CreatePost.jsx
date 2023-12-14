@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 import usePreviewImg from "../../hooks/usePreviewImg";
 import useShowToast from "../../hooks/useShowToast";
 
-import useUserProfileStore from "../../store/userProfileStore";
+import useUserProfileStore from "../../Store/userProfileStore";
 import { useLocation } from "react-router-dom";
 import {
   addDoc,
@@ -33,8 +33,8 @@ import {
 } from "firebase/firestore";
 import { firestore, storage } from "../../firebase/firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
-import useAuthStore from "../../store/authStore";
-import usePostStore from "../../store/postStore";
+import useAuthStore from "../../Store/authStore";
+import usePostStore from "../../Store/postStore";
 
 const CreatePost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

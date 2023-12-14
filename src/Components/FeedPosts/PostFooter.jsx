@@ -15,7 +15,7 @@ import {
   UnlikeLogo,
 } from "../../assets/constants";
 import usePostComment from "../../hooks/usePostComment";
-import useAuthStore from "../../store/authStore";
+import useAuthStore from "../../Store/authStore";
 import useLikePost from "../../hooks/useLikePost";
 import { timeAgo } from "../../utils/timeAgo";
 import CommentsModal from "../Modals/CommentsModal";

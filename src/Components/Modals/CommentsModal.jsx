@@ -12,7 +12,7 @@ import {
 
 import usePostComment from "../../hooks/usePostComment";
 import { useEffect, useRef } from "react";
-import Comment from "/Users/kavyarapolu/Desktop/insta-clone/insta/src/components/Comment/Comment.jsx";
+import Comment from "../../Components/Comment/Comment.jsx";
 
 const CommentsModal = ({ isOpen, onClose, post }) => {
   const { handlePostComment, isCommenting } = usePostComment();

@@ -7,19 +7,18 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import useUserProfileStore from "../../store/userProfileStore";
-
+import useUserProfileStore from "../../Store/userProfileStore";
+import useAuthStore from "../../Store/authStore";
 import EditProfile from "./EditProfile";
 import useFollowUser from "../../hooks/useFollowUser";
-import useAuthStore from "../../store/authStore";
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
   const authUser = useAuthStore((state) => state.user);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(
-    userProfile?.uid
-  );
+  const { isFollowing, isUpdating, handleFollowUser } =
+    useFollowUser(userProfile);
+
   const visitingOwnProfileAndAuth =
     authUser && authUser.username === userProfile.username;
   const visitingAnotherProfileAndAuth =
@@ -32,14 +31,17 @@ const ProfileHeader = () => {
       direction={{ base: "column", sm: "row" }}
     >
       <AvatarGroup
-        size={{ base: "xl", md: "2xl" }}
+        size={{ base: "xl", sm: "2xl" }}
         justifySelf={"center"}
         alignSelf={"flex-start"}
         mx={"auto"}
       >
-        <Avatar src={userProfile.profilePicURL} alt="As a programmer logo" />
+        <Avatar
+          //name="Kavya Rapolu"
+          src={userProfile.profilePicURL}
+          alt="Logo"
+        />
       </AvatarGroup>
-
       <VStack alignItems={"start"} gap={2} mx={"auto"} flex={1}>
         <Flex
           gap={4}
@@ -100,6 +102,7 @@ const ProfileHeader = () => {
             Following
           </Text>
         </Flex>
+
         <Flex alignItems={"center"} gap={4}>
           <Text fontSize={"sm"} fontWeight={"bold"}>
             {userProfile.fullName}
